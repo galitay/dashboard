@@ -1,38 +1,234 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: "greycliff";
+  src: url("https://www.itayg.com/toluna/timeline/static/media/greycliff-cf-regular.df70ae9d.ttf")
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body, html{
+  font-family: "greycliff",Fallback,sans-serif;
+
+  background-color: #262629;
+  height: 100%;
+  font-size: 14px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a, a:visited, a:active{
+  color: #e5e5e5;
+  text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
   display: flex;
-  flex-direction: column;
+  width: 100%;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+header{
+  background-color: #0e171d;
+  width: 100%;
+  color: #e5e5e5;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header img{
+  margin: 5px;
+}
+.header-dashboard{
+  border-bottom: 3px solid #1ab077;
+  padding: 10px 5px;
+}
+
+.content{
+  width: 1000px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.index-container{
+  height: 42px;
+  display: flex;
+  align-items: center;
+  color: #a5a5a5;
+}
+.indexItem{
+  text-align: center;
+  padding: 4px 0;
+}
+
+.status-column, .service-health{
+  width: 80px;
+  padding-left: 10px;
+}
+
+.service-column, .service-name{
+  width: 160px;
+}
+
+.version-column, .service-version{
+  flex-grow: 1;
+  margin: 4px 10px;
+}
+
+.db-version-column{
+  width: 84px;
+  justify-content: center;
+}
+
+.db-health-column{
+  width: 84px;
+  justify-content: center;
+}
+
+.db-health{
+  width: 80%;
+  height: 8px;
+  border-radius: 4px;
+  background-color: #1ab077;
+}
+
+.db-down{
+  background-color: #FF3737;
+}
+.db-unknown{
+  background-color: #fcb141;
+}
+
+.db-missing{
+  background-color: #e5e5e5;
+}
+
+.env-container{
+  width: 100%;
+  border-radius: 6px;
+  display: none;
+}
+
+.env-container.selected{
+  display: block;
+}
+
+.service-container{
+  background-color: #0e171d;
+  margin: 5px 0;
+  padding: 2px 10px;
+  border-radius: 3px;
+  border: 0 solid #1ab077;
+  border-left-width: 2px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+}
+
+.service-container.online{
+  border-left-color: #1ab077;
+}
+
+.service-container.offline{
+  border-left-color: #FF3737;
+}
+
+.service-container.unknown{
+  border-left-color: #fcb141;
+}
+
+.service-container.missing{
+  border-left-color: #e5e5e5;
+}
+
+.service-details{
+  display: flex;
+  color: #FAFAFA;
+  width: 100%;
+}
+
+.service-details div{
+  display: flex;
+  align-items: center;
+}
+
+.service-name{
+  padding: 4px 0;
+  display: flex;
+  /*justify-content: center;
+  align-items: center;*/
+}
+
+.online{
+  color: #1ab077;
+}
+
+.offline{
+  color: #FF3737;
+}
+
+.unknown{
+  color: #fcb141;
+}
+
+.missing{
+  color: #e5e5e5;
+}
+
+
+.service-health, .service-version{
+  padding: 4px 0;
+  display: flex;
+  align-items: center;
+}
+
+.status-dot{
+  font-size: 6px;
+  margin-right: 5px;
+}
+
+.service-version{
+  flex-grow: 1;
+}
+
+.service-health{
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.service-intenal-api, .service-external-api, .service-admin-url{
+  width: 26px;
+
+}
+.service-intenal-api img, .service-external-api img, .service-admin-url img{
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+}
+
+.admin-url{
+  width: 88px;
+}
+
+.envs-menu-container{
+  display: flex;
+  padding: 20px 0;
+}
+
+.env-menu-item{
+  width: 150px;
+  height: 100px;
+  background: rgb(14,23,29);
+  background: linear-gradient(312deg, rgba(14,23,29,1) 0%, rgba(38,46,51,1) 100%);
+  border-radius: 5px;
+  color: #e2e2e2;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  border: 2px solid #474747;
+}
+
+.env-menu-item.selected{
+  border: 2px solid #1ab077;
 }
