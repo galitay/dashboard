@@ -1,10 +1,13 @@
-FROM node:alpine
-WORKDIR '/app'
+FROM node
+RUN mkdir /usr/src/app
+COPY . /usr/src/app
 
-COPY package.json ./
-COPY package-lock.json ./
-RUN npm install
-COPY . ./
-CMD ["npm","start"]
+WORKDIR /usr/src/app
+
+ENV PATH /usr/src/app/node_modules/.bin$PATH
+
+RUN yarn
+
 EXPOSE 3000
-EXPOSE 3001
+
+CMD ["npm","start"]
